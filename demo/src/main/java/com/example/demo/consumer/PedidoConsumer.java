@@ -1,5 +1,6 @@
 package com.example.demo.consumer;
 
+import com.example.demo.dto.PedidoDto;
 import com.example.demo.entity.Pedido;
 import com.example.demo.service.PedidoService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,12 +18,11 @@ public class PedidoConsumer {
     public void consumirPedido(String pedidoJson) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            Pedido pedido = objectMapper.readValue(pedidoJson, Pedido.class);
-            Pedido pedidoProcessado = pedidoService.processarPedido(pedido);
-            // Aqui você pode adicionar lógica para comunicar com o Produto Externo B se necessário
-            System.out.println("Pedido processado: " + pedidoProcessado.getStatus());
+            PedidoDto pedidoDto = objectMapper.readValue(pedidoJson, PedidoDto.class);
+            Pedido pedidoProcessado = pedidoService.processarPedido(pedidoDto);
+            // Nesse ponto poderia ser adicionado logica para se comunicar com o Produto Externo B.
+            System.out.println("Pedido processado com sucesso - Status: " + pedidoProcessado.getStatus());
         } catch (Exception e) {
-            // Tratar exceções
             e.printStackTrace();
         }
     }
