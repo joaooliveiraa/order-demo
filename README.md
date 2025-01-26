@@ -3,6 +3,8 @@
 ## Descrição
 Esta aplicação é uma API desenvolvida em **Java Spring Boot** que processa pedidos utilizando **Kafka** para mensageria e **PostgreSQL** como banco de dados. A aplicação possui endpoints para envio de pedidos e consulta de pedidos finalizados. O fluxo inclui a atualização de status dos pedidos durante o processamento, garantindo um pipeline de dados eficiente e escalável.
 
+![Screenshot](fluxo-tmp.PNG)
+
 ## Tecnologias Utilizadas
 
 - **Java Spring Boot**: Framework principal para a construção da aplicação.
