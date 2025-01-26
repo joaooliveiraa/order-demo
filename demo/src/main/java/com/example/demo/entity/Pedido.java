@@ -19,22 +19,6 @@ public class Pedido {
 
     private BigDecimal valorTotal;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCliente() {
-        return cliente;
-    }
-
-    public List<Produto> getProdutos() {
-        return produtos;
-    }
-
     public void setCliente(String cliente) {
         this.cliente = cliente;
     }
@@ -45,14 +29,6 @@ public class Pedido {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
-    }
-
-    public BigDecimal getValorTotal() {
-        return valorTotal;
     }
 
     public void setValorTotal(BigDecimal valorTotal) {
